@@ -18,7 +18,6 @@ const PageTemplate = ({ data }) => {
         <title>{`${title} - ${config.siteTitle}`}</title>
       </Helmet>
       <SEO pagePath={slug} postNode={postNode} pageSEO />
-
       <Container>
         <PageTitle>{title}</PageTitle>
         <PageBody body={body} />
@@ -32,11 +31,6 @@ export const query = graphql`
     contentfulPage(slug: { eq: $slug }) {
       title
       slug
-      metaDescription {
-        internal {
-          content
-        }
-      }
       body {
         childMarkdownRemark {
           html
