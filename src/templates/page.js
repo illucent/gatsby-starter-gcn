@@ -32,13 +32,11 @@ export const query = graphql`
     contentfulPage(slug: { eq: $slug }) {
       title
       slug
-        content {
-          body {
+      body {
             childMarkdownRemark {
               html
               excerpt(pruneLength: 320)
             }
-        }
       }
     }
   }
