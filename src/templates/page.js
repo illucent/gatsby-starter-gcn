@@ -31,6 +31,11 @@ export const query = graphql`
     contentfulPage(slug: { eq: $slug }) {
       title
       slug
+      metaDescription {
+        internal {
+          content
+        }
+      }
       body {
         childMarkdownRemark {
           html
